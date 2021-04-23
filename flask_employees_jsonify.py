@@ -9,8 +9,8 @@ class Employees(Resource):
         db_connect = create_engine("sqlite:///chinook.db")
         conn = db_connect.connect()
         query = conn.execute("select * from employees")
-        result = {"employees": [i[0] for i in query.cursor.fetchall()]} # dict where key "employees" has value
-        # list of all first column entries(?) in the database
+        result = {"employees": [i[0] for i in query.cursor.fetchall()]}
+        # dict where key "employees" has value that is list of all first column entries(?) in the database
         conn.close()
         db_connect.dispose()
         return jsonify(result)

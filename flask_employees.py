@@ -3,12 +3,12 @@ from flask_restful import Resource, Api
 
 
 class Employees(Resource):
-    def get(self):
+    def get(self):  # retrieves an employee
         return "you got me"
 
 
 class Tracks(Resource):
-    def get(self):
+    def get(self):  # retrieves a dict with key 'data' whose value is another dict
         return {'data': {'xxx': 'yyyyyyyy'}}
 
 
